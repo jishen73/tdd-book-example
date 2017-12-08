@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn server for SITENAME
+
+[Service]
+Restart=on-failure
+User=websvc
+WorkingDirectory=/home/websvc/sites/SITENAME/source
+ExecStart=/home/websvc/sites/SITENAME/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/SITENAME.socket \
+    staging
+
+[Install]
+WantedBy=multi-user.target
+
