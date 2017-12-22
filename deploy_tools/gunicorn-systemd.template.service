@@ -7,7 +7,7 @@ User=websvc
 WorkingDirectory=/home/websvc/sites/SITENAME/source
 ExecStart=/home/websvc/sites/SITENAME/virtualenv/bin/gunicorn \
     --bind unix:/tmp/SITENAME.socket \
-    staging
+    superlists.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
